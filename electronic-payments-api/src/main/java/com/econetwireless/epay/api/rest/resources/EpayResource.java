@@ -17,27 +17,29 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("resources/services")
 public class EpayResource {
 
-    private EpayRequestProcessor epayRequestProcessor;
+	@Autowired
+	private EpayRequestProcessor epayRequestProcessor;
 
+	@Autowired
+	private ReportingProcessor reportingProcessor;
 
-    private ReportingProcessor reportingProcessor;
+	@GetMapping(value = "enquiries/{partnerCode}/balances/{mobileNumber}", produces = {
+			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+	public AirtimeBalanceResponse enquireAirtimeBalance(final String pCode,
+			@PathVariable("mobileNumber") final String msisdn) {
+		return epayRequestProcessor.enquireAirtimeBalance(pCode, msisdn);
+	}
 
-    @GetMapping(value = "enquiries/{partnerCode}/balances/{mobileNumber}",
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public AirtimeBalanceResponse enquireAirtimeBalance( final String pCode, @PathVariable("mobileNumber") final String msisdn) {
-        return epayRequestProcessor.enquireAirtimeBalance(pCode, msisdn);
-    }
+	@PostMapping(value = "credits", produces = { MediaType.APPLICATION_JSON_VALUE,
+			MediaType.APPLICATION_XML_VALUE }, consumes = { MediaType.APPLICATION_JSON_VALUE,
+					MediaType.APPLICATION_XML_VALUE })
+	public AirtimeTopupResponse creditAirtime(@RequestBody final AirtimeTopupRequest airtimeTopupRequest) {
+		return epayRequestProcessor.creditAirtime(airtimeTopupRequest);
+	}
 
-    @PostMapping(value = "credits",
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public AirtimeTopupResponse creditAirtime(@RequestBody final AirtimeTopupRequest airtimeTopupRequest) {
-        return epayRequestProcessor.creditAirtime(airtimeTopupRequest);
-    }
-
-    @GetMapping(value = "transactions/{partnerCode}",
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public TransactionsResponse getPartnerTransactions(@PathVariable("partnerCode") final String partnerCode) {
-        return reportingProcessor.getPartnerTransactions(partnerCode);
-    }
+	@GetMapping(value = "transactions/{partnerCode}", produces = { MediaType.APPLICATION_JSON_VALUE,
+			MediaType.APPLICATION_XML_VALUE })
+	public TransactionsResponse getPartnerTransactions(@PathVariable("partnerCode") final String partnerCode) {
+		return reportingProcessor.getPartnerTransactions(partnerCode);
+	}
 }
