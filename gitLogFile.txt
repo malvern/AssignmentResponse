@@ -1,0 +1,182 @@
+commit a70f575d9186e4a3cb0774140087a8269afe83a5
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun May 6 17:24:44 2018 +0200
+
+    Test classes added: no bug
+
+commit a528be82294898f21450407c4ebc5100fadbaaee
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun May 6 11:56:16 2018 +0200
+
+    No Bugs git commit after all bugs have been resolved
+
+commit fa0c80f501750a0fbe874016902fa51181ed9dd7
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun May 6 11:41:17 2018 +0200
+
+    Bug: enquireBalance method had a missing @WebParam on partner
+
+commit a68c05115d7414cdfd5e19d32117c56e7824e338
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun May 6 11:36:53 2018 +0200
+
+    Bug: SOAP binding type was set to 12 but test case expected output o text/xml not soap/xml
+    hence the Binding was changed to 11 to cater for this
+
+commit 34b18b3052932be55761307f1b87a5d83e2f352b
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Tue May 1 18:51:56 2018 +0200
+
+    No bug after fixing NullPointerError due to missing @Autowired annotations
+
+commit 1c6b28776c599b513b25c3b34bb01b9f315ce5ad
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Tue May 1 18:50:05 2018 +0200
+
+    Bug : NullPointerException due to the following fields private EpayRequestProcessor epayRequestProcessor and private ReportingProcessor reportingProcessor. solution was to use Field Injection thus to add @Autowired annotations on both methods
+
+commit 40ea384106599decb3414926da5fda2f480a5bda
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 20:35:30 2018 +0200
+
+    no bugs after maven install clean
+
+commit 23a529f50703bf15d4017f7779d623345ff264ad
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 20:34:12 2018 +0200
+
+    Programming logic code=code instead of this.code=code
+
+commit af4ad8877fffe66090b3c81c329bcf84eacf0b68
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 19:49:13 2018 +0200
+
+    No bugs after mvn clean just test cases that are failing only
+
+commit cf29a98a041626a6ca8c8cf3bea26c8e238c7bf0
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 19:45:10 2018 +0200
+
+    bug : path was configured to data/logs/electronic-payments-api from /data/logs/electronic-payments-api
+
+commit 5b098cde2514ac6345fc31b347c98a4e937ca765
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 19:36:07 2018 +0200
+
+     after clean up no bug was found
+
+commit 0226f857594b9cb308ab33f64a6f8db2ba96c8ef
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 19:33:34 2018 +0200
+
+    Early bug fix Request should be changed to request not e_req_request
+
+commit fc45fe8bad08741106055240417084b9c5a13646
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 19:27:53 2018 +0200
+
+    no changes just clean up
+
+commit e75aedd20a816289c51515fddabb60bbe568d00d
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 19:25:06 2018 +0200
+
+    no bug after SubscriberRequest table name query was chnaged from Request to e_req_partner
+
+commit f8f42a2c0c35c1b2f8c3234ff0357b3cb5a5b89d
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 19:23:39 2018 +0200
+
+    bug : select statement refer to an invalid table select r from Request... - Request was changed to e_req_partner
+
+commit 97abddf161d871bcda9352c51b178431baf3eb0e
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 19:03:43 2018 +0200
+
+    no bugs after bugs in CreditsServiceImpl ,EnquiriesServiceImpl and PartnerCodeValidatorImpl have been resolved
+
+commit ba7d8af823542119cc29919edf7ae1db5cc16c0f
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 19:00:32 2018 +0200
+
+     bug : SubsciberRequestDao.update method do not exist hence this was commented out
+    final SubscriberRequest creditSubscriberRequest=SubscriberRequestDao.persist(SubscriberRequest) persist method do not exist hence it was replaced with final SubscriberRequest creditSubscriberRequest=SubscriberRequest;
+    both the classes contains the same code DRY principle was violated
+
+commit 74de0a2e7819128b9e865a1072b3318a41e5cdf8
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 17:37:33 2018 +0200
+
+    no bugs in electronic-payments-dao -> commit after compile changes
+
+commit 48c9e80a62af4adaa6a1af648251180e683291ec
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 17:35:00 2018 +0200
+
+     changes after mvn clean command
+
+commit 8328153fc3f8575a4d54a48607377a8344451490
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 17:30:41 2018 +0200
+
+    no bug after: @PreInsert  was replaced with @PrePersist
+
+commit eb7466cd325427d215cc8cdcecc3fad6402e0d9d
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 17:29:20 2018 +0200
+
+    bug : @PreInsert there is no such callback  hence it was replaced with @PrePersist callback:
+
+commit 60a76ac6cf919cee315c4b3763b52a24c7437530
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 17:19:01 2018 +0200
+
+     No bug : commit after logging path was changed from /data/logs/intelligent-network-api to data/logs/intelligent-network-api
+
+commit 3e0512d94bf0139e2e208c6eff965d4b5538fd40
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 17:00:22 2018 +0200
+
+    changes to log4j2.xml files path from /data/logs/intelligent-network-api to data/logs/intelligent-network-api after IOException was thrown
+
+commit 9e2ddd024e71450e66f8c9e2f4e19b7519d91040
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 16:57:45 2018 +0200
+
+    /data/logs/intelligent-network-api/ changed to data/logs/intelligent-network-api/ after an IOExcpetion was thrown /data/logs/intelligent-network-api/ no such file or directory
+
+commit abbc47a9f06187181c3427262822c4e0c7295138
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 16:35:42 2018 +0200
+
+    No bug changes done after econet-utils bug was fixed
+
+commit 4af8bc1e1e19ccb03a57325295530d04d14e3a25
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 16:16:40 2018 +0200
+
+     1) bug : private final Logger ... was fixed to private final static Logger ...   after the following error was displayed -> non static variable Logger cannot be referenced from a static context
+
+commit ddfdb74be755240157339169eadae0ee916614b5
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 16:04:34 2018 +0200
+
+    files
+
+commit bcdc29a5c2f853fbc5c189efb6200fedf74a991f
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 16:03:44 2018 +0200
+
+    Init commit :task is to find bugs or logic proble and to fix them
+
+commit 1739bec1c9ffc643072ffb3cb2bd3626b664d3db
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 15:58:49 2018 +0200
+
+    Init commit : task is to find bugs or logic problems and to fix them.
+
+commit 9d709c5a47e1fd5441ca9384c3407ed9903c808b
+Author: malvern dongeni <malverndongeni@gmail.com>
+Date:   Sun Apr 29 15:53:19 2018 +0200
+
+    Init commit : task find each bug or logic problem and fix them
