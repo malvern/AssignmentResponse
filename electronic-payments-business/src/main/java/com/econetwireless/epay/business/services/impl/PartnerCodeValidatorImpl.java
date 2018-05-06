@@ -13,7 +13,8 @@ public class PartnerCodeValidatorImpl implements PartnerCodeValidator{
     private RequestPartnerDao requestPartnerDao;
 
     public PartnerCodeValidatorImpl(RequestPartnerDao requestPartnerDao) {
-     //   this(super);
+        //this(super);
+    	super();
         this.requestPartnerDao = requestPartnerDao;
     }
 

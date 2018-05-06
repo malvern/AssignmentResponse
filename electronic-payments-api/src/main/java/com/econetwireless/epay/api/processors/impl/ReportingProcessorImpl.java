@@ -12,7 +12,7 @@ import java.util.List;
  * Created by tnyamakura on 18/3/2017.
  */
 public class ReportingProcessorImpl implements ReportingProcessor{
-
+    
     private ReportingService reportingService;
 
     public ReportingProcessorImpl(ReportingService reportingService) {

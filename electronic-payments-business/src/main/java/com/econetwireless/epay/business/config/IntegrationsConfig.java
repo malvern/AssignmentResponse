@@ -47,7 +47,7 @@ public class IntegrationsConfig {
             proxyFactoryBean.setServiceName(env.getProperty("configs.econetwebservice.ws.serviceName"));
             proxyFactoryBean.setPortName(env.getProperty("configs.econetwebservice.ws.portName"));
             proxyFactoryBean.setEndpointAddress(env.getProperty("configs.econetwebservice.ws.endpoint.address"));
-            proxyFactoryBean.setLookupServiceOnStartup(false);
+            proxyFactoryBean.setLookupServiceOnStartup(true);
             return proxyFactoryBean;
         }  catch (Exception e) {
             LOGGER.error("Error Creating intelligentNetworkService : ", e);

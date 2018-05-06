@@ -4,3 +4,4 @@ com/econetwireless/in/soap/messages/CreditRequest.class
 com/econetwireless/in/soap/messages/BalanceResponse.class
 com/econetwireless/in/soap/messages/CreditResponse.class
 com/econetwireless/in/soap/service/IntelligentNetworkServiceImpl.class
+com/econetwireless/in/soap/publisher/ConnectionPoolExecutor.class

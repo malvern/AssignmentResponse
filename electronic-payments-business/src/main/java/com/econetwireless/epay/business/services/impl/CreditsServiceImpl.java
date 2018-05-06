@@ -36,10 +36,13 @@ public class CreditsServiceImpl implements CreditsService{
         final AirtimeTopupResponse airtimeTopupResponse = new AirtimeTopupResponse();
         final SubscriberRequest subscriberRequest = populateSubscriberRequest(airtimeTopupRequest);
      //   final SubscriberRequest createdSubscriberRequest = subscriberRequestDao.persist(subscriberRequest);
-        final SubscriberRequest createdSubscriberRequest=subscriberRequest;
+      //  final SubscriberRequest createdSubscriberRequest=subscriberRequest;
+    	final SubscriberRequest createdSubscriberRequest = subscriberRequestDao.save(subscriberRequest);
+        
         final INCreditResponse inCreditResponse = chargingPlatform.creditSubscriberAccount(populate(airtimeTopupRequest));
         changeSubscriberRequestStatusOnCredit(createdSubscriberRequest, inCreditResponse);
        // subscriberRequestDao.update(createdSubscriberRequest);
+        subscriberRequestDao.flush();
         airtimeTopupResponse.setResponseCode(inCreditResponse.getResponseCode());
         airtimeTopupResponse.setNarrative(inCreditResponse.getNarrative());
         airtimeTopupResponse.setMsisdn(airtimeTopupRequest.getMsisdn());

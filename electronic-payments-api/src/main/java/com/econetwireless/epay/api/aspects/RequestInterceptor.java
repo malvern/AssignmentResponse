@@ -107,9 +107,10 @@ public class RequestInterceptor {
             airtimeTopupResponse.setNarrative(ee.getMessage());
             airtimeTopupResponse.setResponseCode(ee.getResponseCode().getCode());
         }catch (Throwable throwable) {
-            LOGGER.error("Error on credit airtime : ", throwable);
-            airtimeTopupResponse.setNarrative("Airtime Purchase request failed, please try again later");
+             airtimeTopupResponse.setNarrative("Airtime Purchase request failed, please try again later");
             airtimeTopupResponse.setResponseCode(ResponseCode.FAILED.getCode());
+            LOGGER.error("Error on credit airtime : ", throwable);
+            
         }
         LOGGER.info("[{}] IN Airtime Credit Response :: Partner Code : {}, Mobile Number : {}, Response Code : {}, Narrative : {}",
                 ResponseMarker.getMarker(airtimeTopupResponse.getResponseCode()), airtimeTopupRequest.getPartnerCode(), airtimeTopupRequest.getPartnerCode(),

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.econetwireless.epay.api.rest.resources.EpayResourcesIT
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 5.016 sec <<< FAILURE!
-airtimeTopupShouldReturnResponseCodeSUCCESSIfAllOtherSystemsAreUp(com.econetwireless.epay.api.rest.resources.EpayResourcesIT)  Time elapsed: 0.364 sec  <<< FAILURE!
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 5.491 sec <<< FAILURE!
+airtimeTopupShouldReturnResponseCodeSUCCESSIfAllOtherSystemsAreUp(com.econetwireless.epay.api.rest.resources.EpayResourcesIT)  Time elapsed: 0.114 sec  <<< FAILURE!
 java.lang.AssertionError: JSON path "$.responseCode" expected:<200> but was:<500>
 	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:54)
 	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:81)
@@ -46,8 +46,8 @@ java.lang.AssertionError: JSON path "$.responseCode" expected:<200> but was:<500
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:86)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:101)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-airtimeBalanceEnquiryShouldReturnResponseCodeSUCCESSIfAllOtherSystemsAreUp(com.econetwireless.epay.api.rest.resources.EpayResourcesIT)  Time elapsed: 0.011 sec  <<< FAILURE!
-java.lang.AssertionError: JSON path "$.responseCode" expected:<200> but was:<400>
+airtimeBalanceEnquiryShouldReturnResponseCodeSUCCESSIfAllOtherSystemsAreUp(com.econetwireless.epay.api.rest.resources.EpayResourcesIT)  Time elapsed: 0.028 sec  <<< FAILURE!
+java.lang.AssertionError: JSON path "$.responseCode" expected:<200> but was:<500>
 	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:54)
 	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:81)
 	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:116)

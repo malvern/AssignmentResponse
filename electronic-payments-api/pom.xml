@@ -46,6 +46,11 @@
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
         </dependency>
+        <dependency>
+        	<groupId>org.apache.commons</groupId>
+        	<artifactId>commons-pool2</artifactId>
+        	<version>2.5.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -66,7 +71,7 @@
                         <contextPath>/electronic-payments-api</contextPath>
                     </webApp>
                     <httpConnector>
-                        <port>8888</port>
+                        <port>8889</port>
                     </httpConnector>
                 </configuration>
             </plugin>

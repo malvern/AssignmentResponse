@@ -25,8 +25,9 @@ public class EpayResource {
 
 	@GetMapping(value = "enquiries/{partnerCode}/balances/{mobileNumber}", produces = {
 			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public AirtimeBalanceResponse enquireAirtimeBalance(final String pCode,
+	public AirtimeBalanceResponse enquireAirtimeBalance(@PathVariable("partnerCode")final String pCode,
 			@PathVariable("mobileNumber") final String msisdn) {
+		
 		return epayRequestProcessor.enquireAirtimeBalance(pCode, msisdn);
 	}
 
@@ -40,6 +41,7 @@ public class EpayResource {
 	@GetMapping(value = "transactions/{partnerCode}", produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
 	public TransactionsResponse getPartnerTransactions(@PathVariable("partnerCode") final String partnerCode) {
+		
 		return reportingProcessor.getPartnerTransactions(partnerCode);
 	}
 }
